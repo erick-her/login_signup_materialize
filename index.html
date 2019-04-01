@@ -14,6 +14,44 @@
 </head>
 <body>
 
+  <!--Main content-->
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 l6 offset-l3">
+            <!--Sign in form-->
+            <form class="mt-10">
+              <!--Title-->
+              <p class="flow-text center-align purple-text text-lighten-2">SIGN IN</p>
+              <!--Email input-->
+              <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input name="email" id="email" type="email" class="validate" required>
+                <label for="email">Email address</label>
+                <span class="helper-text" data-error="Invalid email address." data-success="Correct.">Helper text</span>
+              </div>
+              <!--Password input-->
+              <div class="input-field">
+                <i class="material-icons prefix">lock</i>
+                <input name="password" id="password" type="password" class="validate" required>
+                <label for="password">Password</label>
+                <span class="helper-text" data-error="Password is required."></span>
+              </div>
+            </form>
+            <!--Submit button-->
+            <div class="input-field">
+              <button class="btn btn-flat transparent waves-effect purple-text text-lighten-2"><i class="material-icons right purple-text text-lighten-2">send</i>Submit</button>
+            </div>
+            <!--Sign up link-->
+            <div class="input-field center-align">
+              <a href="#!" class="cyan-text text-lighten-1">Don't have an account yet? Sign up here.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!--Jquery-->
   <script src="assets/js/jquery.min.js"></script>
