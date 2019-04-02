@@ -14,6 +14,87 @@
 </head>
 <body>
 
+  <!--Main content-->
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col s12 l6 offset-l3">
+            <!--Sign up form-->
+            <form>
+              <!--Title-->
+              <p class="flow-text center-align purple-text text-lighten-2">SIGN UP</p>
+              <!--Login link-->
+              <div class="input-field center-align">
+                <a href="../index.html" class="cyan-text text-lighten-1">Already have an account? Login in here.</a>
+              </div>
+              <!--First name input-->
+              <div class="input-field col s6">
+                <input id="first_name" name="first_name" type="text" class="validate" required>
+                <label for="first_name">First name</label>
+                <span class="helper-text" data-error="First name is required."></span>
+              </div>
+              <!--Last name input-->
+              <div class="input-field col s6">
+                <input id="last_name" name="last_name" type="text" class="validate" required>
+                <label for="last_name">Last name</label>
+                <span class="helper-text" data-error="Last name is required."></span>
+              </div>
+              <!--Gender radios-->
+              <div class="input-field col s6">
+                <p>Gender</p>
+                <p>
+                  <label>
+                    <input name="gender" type="radio">
+                    <span>Male</span>
+                  </label>
+                </p>
+                <p>
+                  <label>
+                    <input name="gender" type="radio">
+                    <span>Female</span>
+                  </label>
+                </p>
+              </div>
+              <!--Birthdate input-->
+              <div class="input-field col s6">
+                <input id="birthdate" name="birthdate" type="text" class="datepicker validate" required>
+                <label for="birthdate">Birthdate</label>
+                <span class="helper-text" data-error="Your birthdate is required."></span>
+              </div>
+              <!--Phone number input-->
+              <div class="input-field col s12">
+                <input id="phone" name="phone" type="tel" class="validate" required>
+                <label for="phone">Phone number</label>
+                <span class="helper-text" data-error="Phone number is required."></span>
+              </div>
+              <!--Email address input-->
+              <div class="input-field col s12">
+                <input id="email" name="email" type="email" class="validate" required>
+                <label for="email">Email address</label>
+                <span class="helper-text" data-error="Invalid email address." data-success="Correct.">Please provide a valid email address.</span>
+              </div>
+              <!--Password input-->
+              <div class="input-field col s6">
+                <input id="password" name="password" type="password" class="validate" required>
+                <label for="password">Password</label>
+                <span class="helper-text" data-error="Password is required"></span>
+              </div>
+              <!--Confirm password input-->
+              <div class="input-field col s6">
+                <input id="confirm_password" name="confirm_password" type="password" class="validate">
+                <label for="confirm_password">Confirm password</label>
+                <span class="helper-text" data-error="Passwords do not match." data-success="Correct.">Passwords must match.</span>
+              </div>
+            </form>
+            <!--Submit button-->
+            <button class="btn waves-effect purple lighten-2">Submit</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
 
   <!--Jquery-->
   <script src="../assets/js/jquery.min.js"></script>
