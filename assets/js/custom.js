@@ -12,4 +12,14 @@ $(document).ready(function(){
   $("input[name=password]").change(function() {
     $("input[name=confirm_password]").attr('pattern', $(this).val());
   });
+
+  // Phone number validation, format --> (xxx) xxx-xxxx
+  $('input[name=phone]').blur(function(){
+    phone = $(this).val();
+    phone = phone.replace(/[^0-9]/g,'');
+    if(phone.length != 10){
+      $("input[name=phone]").addClass('invalid');
+    }
+  });
+  
 });
