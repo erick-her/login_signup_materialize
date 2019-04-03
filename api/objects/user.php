@@ -41,7 +41,22 @@
     * Does user exist function.
     **/
     public function alreadyExists(){
+      // Select query
+      $query = 'SELECT * FROM '
+      . $this->table_name .
+      ' WHERE email="' . $this->email . '"';
 
+      // Prepare query statement
+      $stmt = $this->conn->prepare($query);
+
+      // Exeute query
+      $stmt->execute();
+
+      // Verifiy if user exists
+      if($stmt->rowCount() > 0){
+        return true;
+      }else{
+        return false;
+      }
     }
-
   }
