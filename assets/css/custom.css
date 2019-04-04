@@ -29,30 +29,3 @@
   border-bottom: 1px solid #e1bee7 !important;
   box-shadow: 0 1px 0 0 #e1bee7 !important;
 }
-
-/*  Overriding materialize radio input styles */
-[type="radio"]:checked + span:after {
-  border: 2px solid #ce93d8;
-  background-color: #ce93d8;
-}
-
-/*  Overriding materialize datepicker style */
-.datepicker-date-display {
-  background-color: #ce93d8;
-}
-
-/*  Overriding materialize datepicker style, when a date is selected */
-.datepicker-table td.is-selected{
-  background-color: #ce93d8;
-  color: #ffffff;
-}
-
-/*  Overriding materialize datepicker footer action buttons */
-.datepicker-cancel, .datepicker-done {
-  color: #6a1b9a;
-}
-
-/*  Overriding materialize month, year select options text styles */
-.dropdown-content li>a, .dropdown-content li>span {
-  color: #ce93d8;
-}
