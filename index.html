@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col s12 l6 offset-l3">
             <!--Sign in form-->
-            <form class="mt-10">
+            <form class="mt-10" method="get" action="api/User/signin.php">
               <!--Title-->
               <p class="flow-text center-align purple-text text-lighten-2">SIGN IN</p>
               <!--Email input-->
@@ -38,11 +38,9 @@
                 <label for="password">Password</label>
                 <span class="helper-text" data-error="Password is required."></span>
               </div>
+              <!--Submit button-->
+              <button type="submit" class="btn btn-flat transparent waves-effect purple-text text-lighten-2"><i class="material-icons right purple-text text-lighten-2">send</i>Submit</button>
             </form>
-            <!--Submit button-->
-            <div class="input-field">
-              <button class="btn btn-flat transparent waves-effect purple-text text-lighten-2"><i class="material-icons right purple-text text-lighten-2">send</i>Submit</button>
-            </div>
             <!--Sign up link-->
             <div class="input-field center-align">
               <a href="signup/index.html" class="cyan-text text-lighten-1">Don't have an account yet? Sign up here.</a>

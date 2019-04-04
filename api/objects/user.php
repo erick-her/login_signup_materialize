@@ -68,7 +68,17 @@
     * Sign in function.
     **/
     public function signin(){
+      // Query
+      $query = 'SELECT * FROM '
+      . $this->table_name .
+      ' WHERE email = "' . $this->email .'"';
 
+      // Prepare query statement
+      $stmt = $this->conn->prepare($query);
+
+      // Execute query
+      $stmt->execute();
+      return $stmt;
     }
 
     /**
