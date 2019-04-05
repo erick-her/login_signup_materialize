@@ -2,6 +2,28 @@ $(document).ready(function(){
 
   var url = 'http://localhost:8000/';
 
+  // Email validation regex
+  var regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
+
+  //Spinner
+  preloader =
+  '<div class="container center">' +
+    '<div class="preloader-wrapper small active">' +
+      '<div class="spinner-layer spinner-blue-only">' +
+        '<div class="circle-clipper left">' +
+          '<div class="circle"></div>' +
+        '</div>' +
+        '<div class="gap-patch">' +
+          '<div class="circle"></div>' +
+        '</div>' +
+        '<div class="circle-clipper right">' +
+          '<div class="circle"></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>'
+
+
   // Validate if passwords match
   $("input[name=password]").change(function() {
     $("input[name=confirm_password]").attr('pattern', $(this).val());
@@ -38,7 +60,6 @@ $(document).ready(function(){
     }
 
     // Email validation
-    var regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
     if(!(email.match(regex))){
       $("input[name=email]").addClass('invalid');
       return false;
@@ -99,16 +120,70 @@ $(document).ready(function(){
         url: url + form_action,
         data: {first_name:first_name, last_name:last_name, phone:phone_number, email:email, password:password},
         timeout: 3000
-      }).done(function(data){
-        if(data == 'success'){
+      }).done(function(response){
+        if(response == 'success'){
           var toastHTML = '<span>Successfully signed up!</span><a href="../index.html" class="btn-flat toast-action">Signin</button>';
           M.toast({html: toastHTML});
         }else{
-           M.toast({html: data});
+          M.toast({html: response});
         }
       });
     }
 
+  });
+
+  // Submit login form
+  $('#btnSignin').click(function(){
+    // get input values
+    var form = $('form');
+    var email = form.find('input[name="email"]').val().trim();
+    var password = form.find('input[name="password"]').val().trim();
+
+    var form_method = form.attr('method'); // get form method
+    var form_action = form.attr('action'); // get form action
+
+    // Email validation
+    if(!(email.match(regex))){
+      $("input[name=email]").addClass('invalid');
+      return false;
+    }
+
+    // Validate if inputs are empty
+    if(email == '' && password == ''){
+      $('input').addClass('invalid');
+      return false; // so form isn't submitted
+    }
+
+    // Check to see if email input is empty
+    else if(email == ''){
+      $("#email_input input").addClass('invalid');
+      return false;
+    }
+
+    // Check to see if password input id empty
+    else if(password == ''){
+      $("#password_input input").addClass('invalid');
+      return false;
+    }
+
+    // if fields are not empty submit login form
+    else{
+      $.ajax({
+        method: form_method,
+        url: url + form_action,
+        data: {email:email, password:password},
+        timeout: 3000
+      }).done(function (response) {
+        if (response == 'success') {
+          // Preloader
+          $('#progress').html(preloader);
+          setTimeout(' window.location.href = "../../dashboard/home.php"; ', 1000);
+        } else {
+          // Alert message if email or password are incorrect
+          M.toast({html: response});
+        }
+      })
+    }
   });
 
 });

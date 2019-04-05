@@ -32,5 +32,5 @@
 
     echo 'success';
   }else{
-    echo 'Invalid email or password, try again.';
+    echo 'Incorrect email or password, try again.';
   }
