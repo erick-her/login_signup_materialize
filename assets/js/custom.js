@@ -37,6 +37,13 @@ $(document).ready(function(){
       return false;
     }
 
+    // Email validation
+    var regex = /^[\w\-\.\+]+\@[a-zA-Z0-9\. \-]+\.[a-zA-z0-9]{2,4}$/;
+    if(!(email.match(regex))){
+      $("input[name=email]").addClass('invalid');
+      return false;
+    }
+
     // Validate if fields are empty
     if(first_name == '' && last_name == '' && phone_number == '' && email == '' && password == '' && confirm_password == ''){
       $('input').addClass('invalid');
