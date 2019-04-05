@@ -30,7 +30,7 @@
         <div class="container">
           <a href="#!" class="brand-logo">Dashboard</a>
           <ul class="right">
-            <li><a href="#!">Signout<i class="material-icons right">logout</i></a></li>
+            <li><a href="../api/User/signout.php">Signout<i class="material-icons right">logout</i></a></li>
           </ul>
         </div>
       </div>
