@@ -1,3 +1,10 @@
+/**Importing font**/
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+  font-family: 'Raleway', sans-serif;
+}
+
 /* Overriding materialize btn styles */
 .btn {
   width: 100%;

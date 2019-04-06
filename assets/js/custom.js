@@ -52,19 +52,6 @@ $(document).ready(function(){
     var form_method = form.attr('method'); // get form method
     var form_action = form.attr('action'); // get form action
 
-    // Phone number validation on submit
-    phone_number = phone_number.replace(/[^0-9]/g,'');
-    if(phone_number.length != 10){
-      $("input[name=phone]").addClass('invalid');
-      return false;
-    }
-
-    // Email validation
-    if(!(email.match(regex))){
-      $("input[name=email]").addClass('invalid');
-      return false;
-    }
-
     // Validate if fields are empty
     if(first_name == '' && last_name == '' && phone_number == '' && email == '' && password == '' && confirm_password == ''){
       $('input').addClass('invalid');
@@ -113,6 +100,19 @@ $(document).ready(function(){
       return false;
     }
 
+    // Phone number validation on submit
+    phone_number = phone_number.replace(/[^0-9]/g,'');
+    if(phone_number.length != 10){
+      $("input[name=phone]").addClass('invalid');
+      return false;
+    }
+
+    // Email validation
+    if(!(email.match(regex))){
+      $("input[name=email]").addClass('invalid');
+      return false;
+    }
+
     // If form fields are not empty submit form
     else{
       $.ajax({
@@ -142,12 +142,6 @@ $(document).ready(function(){
     var form_method = form.attr('method'); // get form method
     var form_action = form.attr('action'); // get form action
 
-    // Email validation
-    if(!(email.match(regex))){
-      $("input[name=email]").addClass('invalid');
-      return false;
-    }
-
     // Validate if inputs are empty
     if(email == '' && password == ''){
       $('input').addClass('invalid');
@@ -163,6 +157,12 @@ $(document).ready(function(){
     // Check to see if password input id empty
     else if(password == ''){
       $("#password_input input").addClass('invalid');
+      return false;
+    }
+
+    // Email validation
+    if(!(email.match(regex))){
+      $("input[name=email]").addClass('invalid');
       return false;
     }
 
