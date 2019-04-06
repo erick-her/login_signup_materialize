@@ -122,7 +122,7 @@ $(document).ready(function(){
         timeout: 3000
       }).done(function(response){
         if(response == 'success'){
-          var toastHTML = '<span>Successfully signed up!</span><a href="../index.html" class="btn-flat toast-action">Signin</button>';
+          var toastHTML = '<span>Successfully signed up!</span><a href="../index.html" class="btn-flat toast-action">Signin</a>';
           M.toast({html: toastHTML});
         }else{
           M.toast({html: response});
